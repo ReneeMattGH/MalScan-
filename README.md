@@ -1,73 +1,226 @@
-# Welcome to your Lovable project
+****MalScan AI — Intelligent Malware Analysis & Classification Platform****
 
-## Project info
+MalScan AI is a web-based malware analysis platform that performs both static and dynamic analysis on unknown software binaries and classifies them into malware families using Deep Learning.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The system supports all major executable formats (EXE, DLL, BIN, ELF, APK, etc.) and delivers results through a modern cybersecurity-grade UI inspired by VirusTotal and AnyRun.
 
-## How can I edit this code?
+**🔥 Features**
 
-There are several ways of editing your application.
+*✅ 1. Multi-Format Binary Upload*
 
-**Use Lovable**
+Supports:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+.exe, .dll, .sys, .msi, .scr, .ocx (Windows)
 
-Changes made via Lovable will be committed automatically to this repo.
+.elf, .so (Linux)
 
-**Use your preferred IDE**
+.bin, .dat, .img, .dump (Raw binaries)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+.apk, .dex (Mobile)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+*✅ 2. Static Malware Analysis*
 
-Follow these steps:
+Automatically extracts:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+API call sequences
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Opcodes (Capstone disassembly)
 
-# Step 3: Install the necessary dependencies.
-npm i
+Strings
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+PE/ELF header metadata
+
+Imported/Exported functions
+
+File/Section entropy
+
+Binary structure breakdown
+
+*✅ 3. Dynamic Analysis (Sandbox)*
+
+Runs the file inside a secure sandbox (or sandbox mock) and observes:
+
+File operations
+
+Registry changes
+
+Network behavior
+
+Process activity
+
+Behavioral logs
+
+✅ 4. Deep Learning Malware Classification
+
+Uses a LSTM/CNN-based model trained on opcode/API sequences to classify files into malware families such as:
+
+Ransomware
+
+Trojan
+
+Worm
+
+Spyware
+
+Adware
+
+Rootkit
+
+Downloader
+
+Backdoor
+
+Outputs:
+
+Predicted family
+
+Confidence percentage
+
+Probability distribution chart
+
+✅ 5. Professional Frontend (React / Next.js)
+
+Modern cyber-themed UI with:
+
+File upload interface
+
+Real-time progress
+
+Visualization charts:
+
+Opcode histogram
+
+API sequence timeline
+
+Entropy graph
+
+Malware probability bars
+
+Detailed analysis pages
+
+History page
+
+API documentation page
+
+Login / Signup
+
+✅ 6. Backend (FastAPI)
+
+Clean, modular backend with:
+
+/upload
+
+/analyze/static
+
+/analyze/dynamic
+
+/classify
+
+/history
+
+/auth/login
+
+/auth/signup
+
+/report/{id} (PDF generator)
+
+Integrated with:
+
+Static feature extractor
+
+Dynamic analyzer
+
+ML classifier
+
+Database (MongoDB/PostgreSQL)
+
+✅ 7. PDF Report Generator
+
+Download a full malware analysis report including:
+
+File metadata
+
+Static & dynamic features
+
+ML classification
+
+Confidence score
+
+Charts & graphs
+
+User & timestamp info
+
+🏗 Tech Stack
+Frontend
+
+React / Next.js
+
+TailwindCSS
+
+Recharts / Chart.js
+
+Framer Motion
+
+Backend
+
+FastAPI
+
+Python
+
+pefile
+
+capstone
+
+python-magic
+
+TensorFlow / PyTorch
+
+pdfkit / reportlab
+
+Database
+
+MongoDB or PostgreSQL
+
+📁 Project Structure
+/frontend
+/backend
+/model
+/database
+/services
+/utils
+/public
+
+⚙️ How It Works (High-Level Flow)
+
+User uploads a binary
+
+Backend extracts static features
+
+Sandbox performs dynamic analysis (optional)
+
+ML model predicts malware family
+
+Results are displayed with graphs
+
+History is stored in DB
+
+User can download a PDF report
+
+🚀 Setup & Installation
+1️⃣ Clone the Repository
+git clone https://github.com/<your-username>/malscan-ai.git
+cd malscan-ai
+
+2️⃣ Install Backend Dependencies
+cd backend
+pip install -r requirements.txt
+
+3️⃣ Start FastAPI
+uvicorn main:app --reload
+
+4️⃣ Install Frontend
+cd ../frontend
+npm install
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
