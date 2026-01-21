@@ -7,7 +7,7 @@ interface OpcodeHistogramProps {
 
 export function OpcodeHistogram({ data }: OpcodeHistogramProps) {
   return (
-    <div className="p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm">
+    <div className="p-6 rounded- xl border border-border/50 bg-card/50 backdrop-blur-sm">
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-foreground">Opcode Distribution</h3>
         <p className="text-sm text-muted-foreground mt-1">
